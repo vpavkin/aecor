@@ -1,13 +1,14 @@
 package akka.persistence.cassandra
 
 import akka.Done
-import akka.actor.{ ActorSystem, ExtendedActorSystem }
+import akka.actor.{ActorSystem, ExtendedActorSystem}
 import akka.event.Logging
 import akka.persistence.cassandra.Session.Init
 import akka.persistence.cassandra.session.CassandraSessionSettings
 import akka.persistence.cassandra.session.scaladsl.CassandraSession
 import cats.effect.Effect
 import cats.implicits._
+import aecornext.util.effect._
 
 object DefaultJournalCassandraSession {
 
@@ -25,7 +26,7 @@ object DefaultJournalCassandraSession {
     )
     val settings = CassandraSessionSettings(system.settings.config.getConfig("cassandra-journal"))
     new CassandraSession(system, provider, settings, system.dispatcher, log, metricsCategory, { x =>
-      F.toIO(init(Session[F](x)).as(Done)).unsafeToFuture()
+      init(Session[F](x)).as(Done).toIO.unsafeToFuture()
     })
   }
 }

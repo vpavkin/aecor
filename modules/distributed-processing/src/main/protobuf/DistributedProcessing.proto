@@ -1,7 +1,7 @@
 syntax = "proto2";
 
-package aecor.distributedprocessing.serialization;
-option java_package = "aecor.distributedprocessing.serialization.msg";
+package aecornext.distributedprocessing.serialization;
+option java_package = "aecornext.distributedprocessing.serialization.msg";
 option optimize_for = SPEED;
 
 message KeepRunning {

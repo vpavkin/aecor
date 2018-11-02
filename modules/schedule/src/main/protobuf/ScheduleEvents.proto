@@ -1,7 +1,7 @@
 syntax = "proto2";
 
-package aecor.schedule.serialization.protobuf;
-option java_package = "aecor.schedule.serialization.protobuf.msg";
+package aecornext.schedule.serialization.protobuf;
+option java_package = "aecornext.schedule.serialization.protobuf.msg";
 option optimize_for = SPEED;
 
 message ScheduleEntryAdded {

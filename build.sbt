@@ -2,25 +2,20 @@ import ReleaseTransformations._
 import sbtrelease.Version.Bump
 import pl.project13.scala.sbt._
 
-lazy val buildSettings = inThisBuild(
-  Seq(
-    organization := "io.aecor",
-    scalaVersion := "2.12.4"
-  )
-)
+lazy val buildSettings = inThisBuild(Seq(organization := "io.aecor", scalaVersion := "2.12.4"))
 
 lazy val akkaVersion = "2.5.15"
 lazy val akkaPersistenceCassandraVersion = "0.61"
 
-lazy val catsVersion = "1.4.0"
-lazy val catsEffectVersion = "1.0.0"
+lazy val catsVersion = "1.3.1"
+lazy val catsEffectVersion = "0.10"
 lazy val scodecVersion = "1.10.4"
 lazy val logbackVersion = "1.1.7"
 lazy val cassandraDriverExtrasVersion = "3.1.0"
 lazy val jsr305Version = "3.0.1"
 lazy val boopickleVersion = "1.3.0"
 lazy val monocleVersion = "1.5.0-cats"
-lazy val fs2Version = "1.0.0"
+lazy val fs2Version = "0.10.6"
 lazy val log4catsVersion = "0.2.0-M1"
 
 lazy val scalaCheckVersion = "1.13.4"
@@ -33,7 +28,7 @@ lazy val scalametaVersion = "1.8.0"
 // Example dependencies
 
 lazy val circeVersion = "0.9.3"
-lazy val http4sVersion = "0.20.0-M1"
+lazy val http4sVersion = "0.18.20"
 lazy val scalametaParadiseVersion = "3.0.0-M10"
 
 lazy val catsTaglessVersion = "0.1.0"
@@ -43,7 +38,7 @@ lazy val commonSettings = Seq(
   scalacOptions ++= commonScalacOptions,
   addCompilerPlugin("org.spire-math" %% "kind-projector" % kindProjectorVersion),
   parallelExecution in Test := false,
-  scalacOptions in (Compile, doc) := (scalacOptions in (Compile, doc)).value
+  scalacOptions in(Compile, doc) := (scalacOptions in(Compile, doc)).value
     .filter(_ != "-Xfatal-warnings")
 ) ++ warnUnusedImport
 
@@ -61,7 +56,7 @@ lazy val aecor = project
     akkaPersistence,
     akkaGeneric,
     distributedProcessing,
-    example,
+//    example,
     schedule,
     testKit,
     tests,
@@ -114,23 +109,16 @@ lazy val testKit = aecorModule("test-kit", "Aecor Test Kit")
   .settings(testKitSettings)
 
 lazy val tests = aecorModule("tests", "Aecor Tests")
-  .dependsOn(
-    core,
-    schedule,
-    testKit,
-    akkaPersistence,
-    distributedProcessing,
-    boopickleWireProtocol
-  )
+  .dependsOn(core, schedule, testKit, akkaPersistence, distributedProcessing, boopickleWireProtocol)
   .settings(aecorSettings)
   .settings(noPublishSettings)
   .settings(testingSettings)
 
-lazy val example = aecorModule("example", "Aecor Example Application")
-  .dependsOn(core, schedule, distributedProcessing, boopickleWireProtocol)
-  .settings(aecorSettings)
-  .settings(noPublishSettings)
-  .settings(exampleSettings)
+//lazy val example = aecorModule("example", "Aecor Example Application")
+//  .dependsOn(core, schedule, distributedProcessing, boopickleWireProtocol)
+//  .settings(aecorSettings)
+//  .settings(noPublishSettings)
+//  .settings(exampleSettings)
 
 lazy val benchmarks = aecorModule("benchmarks", "Aecor Benchmarks")
   .dependsOn(core)
@@ -145,7 +133,8 @@ lazy val coreSettings = Seq(
     "org.typelevel" %% "cats-core" % catsVersion,
     "org.typelevel" %% "cats-effect" % catsEffectVersion,
     "org.scodec" %% "scodec-bits" % "1.1.6",
-    "org.scodec" %% "scodec-core" % "1.10.3"
+    "org.scodec" %% "scodec-core" % "1.10.3",
+    "co.fs2" %% "fs2-core" % fs2Version
   )
 )
 
@@ -153,8 +142,8 @@ lazy val boopickleWireProtocolSettings = Seq(
   addCompilerPlugin(
     "org.scalameta" % "paradise" % scalametaParadiseVersion cross CrossVersion.patch
   ),
-  sources in (Compile, doc) := Nil,
-  scalacOptions in (Compile, console) := Seq(),
+  sources in(Compile, doc) := Nil,
+  scalacOptions in(Compile, console) := Seq(),
   libraryDependencies ++= Seq(
     "io.suzaku" %% "boopickle" % boopickleVersion,
     "org.scalameta" %% "scalameta" % scalametaVersion
@@ -162,7 +151,7 @@ lazy val boopickleWireProtocolSettings = Seq(
 )
 
 lazy val scheduleSettings = commonProtobufSettings ++ Seq(
-  sources in (Compile, doc) := Nil,
+  sources in(Compile, doc) := Nil,
   addCompilerPlugin(
     "org.scalameta" % "paradise" % scalametaParadiseVersion cross CrossVersion.patch
   ),
@@ -175,7 +164,6 @@ lazy val scheduleSettings = commonProtobufSettings ++ Seq(
 lazy val distributedProcessingSettings = commonProtobufSettings ++ Seq(
   libraryDependencies ++= Seq("com.typesafe.akka" %% "akka-cluster-sharding" % akkaVersion)
 )
-
 
 lazy val akkaPersistenceSettings = commonProtobufSettings ++ Seq(
   libraryDependencies ++= Seq(
@@ -200,8 +188,8 @@ lazy val exampleSettings = {
     resolvers += "krasserm at bintray" at "http://dl.bintray.com/krasserm/maven",
     libraryDependencies ++=
       Seq(
-        "com.github.krasserm" %% "streamz-converter" % "0.10-M1",
-        "co.fs2" %% "fs2-core" % "1.0.0",
+//        "com.github.krasserm" %% "streamz-converter" % "0.10-M1",
+        "co.fs2" %% "fs2-core" % fs2Version,
         "org.typelevel" %% "cats-mtl-core" % "0.4.0",
         "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
         "org.http4s" %% "http4s-dsl" % http4sVersion,
@@ -286,18 +274,22 @@ lazy val commonScalacOptions = Seq(
 )
 
 lazy val warnUnusedImport = Seq(
-  scalacOptions in (Compile, console) --= Seq("-Ywarn-unused:imports", "-Xfatal-warnings")
+  scalacOptions in(Compile, console) --= Seq("-Ywarn-unused:imports", "-Xfatal-warnings")
 )
 
 lazy val noPublishSettings = Seq(publish := (()), publishLocal := (()), publishArtifact := false)
 
 lazy val publishSettings = Seq(
+  sharedReleaseProcess,
   releaseCrossBuild := true,
   releaseVersionBump := Bump.Minor,
-  releaseCommitMessage := s"Set version to ${if (releaseUseGlobalVersion.value) (version in ThisBuild).value
-  else version.value}",
+  releaseCommitMessage := s"Set version to ${
+    if (releaseUseGlobalVersion.value) (version in ThisBuild).value
+    else version.value
+  }",
   releaseIgnoreUntrackedFiles := true,
   releasePublishArtifactsAction := PgpKeys.publishSigned.value,
+  credentials += Credentials(Path.userHome / ".m2" / "nexus-market-local.credentials"),
   homepage := Some(url("https://github.com/notxcain/aecor")),
   licenses := Seq("MIT" -> url("http://opensource.org/licenses/MIT")),
   publishMavenStyle := true,
@@ -306,11 +298,11 @@ lazy val publishSettings = Seq(
     false
   },
   publishTo := {
-    val nexus = "https://oss.sonatype.org/"
+    val nexus = "http://nexus.market.local/repository/maven-"
     if (isSnapshot.value)
-      Some("snapshots" at nexus + "content/repositories/snapshots")
+      Some("snapshots" at nexus + "snapshots/")
     else
-      Some("releases" at nexus + "service/local/staging/deploy/maven2")
+      Some("releases" at nexus + "releases/")
   },
   autoAPIMappings := true,
   scmInfo := Some(
@@ -326,21 +318,19 @@ lazy val publishSettings = Seq(
     </developers>
 )
 
-lazy val sharedReleaseProcess = Seq(
-  releaseProcess := Seq[ReleaseStep](
-    checkSnapshotDependencies,
-    inquireVersions,
-    runClean,
-    runTest,
-    setReleaseVersion,
-    commitReleaseVersion,
-    tagRelease,
-    publishArtifacts,
-    setNextVersion,
-    commitNextVersion,
-    ReleaseStep(action = "sonatypeReleaseAll" :: _),
-    pushChanges
-  )
+lazy val sharedReleaseProcess = releaseProcess := Seq[ReleaseStep](
+  checkSnapshotDependencies,
+  inquireVersions,
+  //    runClean,
+  //    runTest,
+  setReleaseVersion,
+  //    commitReleaseVersion,
+  //    tagRelease,
+  publishArtifacts,
+  //    setNextVersion,
+  //    commitNextVersion,
+  //    ReleaseStep(action = "sonatypeReleaseAll" :: _),
+  //    pushChanges
 )
 
 addCommandAlias("validate", ";compile;test")

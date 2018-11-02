@@ -1,7 +1,7 @@
 syntax = "proto2";
 
-package aecor.runtime.akkapersistence.serialization;
-option java_package = "aecor.runtime.akkapersistence.serialization.msg";
+package aecornext.runtime.akkapersistence.serialization;
+option java_package = "aecornext.runtime.akkapersistence.serialization.msg";
 option optimize_for = SPEED;
 
 message EntityCommand {
