@@ -4,8 +4,8 @@ import pl.project13.scala.sbt._
 
 lazy val buildSettings = inThisBuild(Seq(organization := "io.aecor", scalaVersion := "2.12.4"))
 
-lazy val akkaVersion = "2.5.15"
-lazy val akkaPersistenceCassandraVersion = "0.61"
+lazy val akkaVersion = "2.5.8"
+lazy val akkaPersistenceCassandraVersion = "0.57"
 
 lazy val catsVersion = "1.3.1"
 lazy val catsEffectVersion = "0.10"
