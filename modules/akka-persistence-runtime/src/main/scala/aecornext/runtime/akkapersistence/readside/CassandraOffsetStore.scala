@@ -5,7 +5,7 @@ import java.util.UUID
 import aecornext.data.TagConsumer
 import aecornext.runtime.KeyValueStore
 import aecornext.util.effect._
-import akka.persistence.cassandra.Session.Init
+import aecornext.akka.persistence.cassandra.Session.Init
 import akka.persistence.cassandra.session.scaladsl.CassandraSession
 import cats.Functor
 import cats.data.Kleisli

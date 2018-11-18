@@ -3,13 +3,13 @@ package aecornext.schedule
 import java.time._
 import java.time.format.DateTimeFormatter
 
-import aecornext.schedule.CassandraScheduleEntryRepository.{ Queries, TimeBucket }
+import aecornext.akka.persistence.cassandra.Session
+import aecornext.schedule.CassandraScheduleEntryRepository.{Queries, TimeBucket}
 import aecornext.schedule.ScheduleEntryRepository.ScheduleEntry
 import akka.NotUsed
-import akka.persistence.cassandra._
 import akka.persistence.cassandra.session.scaladsl.CassandraSession
 import akka.stream.Materializer
-import akka.stream.scaladsl.{ Sink, Source }
+import akka.stream.scaladsl.{Sink, Source}
 import cats.effect.Effect
 import com.datastax.driver.core.Row
 import com.datastax.driver.extras.codecs.jdk8.InstantCodec

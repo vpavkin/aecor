@@ -1,4 +1,5 @@
-package akka.persistence.cassandra
+package aecornext.akka.persistence.cassandra
+
 import java.util.concurrent.Executor
 
 import cats.data.Kleisli
