@@ -72,6 +72,7 @@ private[aecornext] final class GenericAkkaRuntimeActor[K: KeyDecoder, M[_[_]], F
       M.decoder
         .decodeValue(opBytes) match {
         case Attempt.Successful(pair) =>
+          log.debug("[{}] [{}] Received invocation [{}]", self.path, key, pair.first.toString)
           performInvocation(actions, pair.first, pair.second)
         case Attempt.Failure(cause) =>
           val decodingError = new IllegalArgumentException(cause.messageWithContext)

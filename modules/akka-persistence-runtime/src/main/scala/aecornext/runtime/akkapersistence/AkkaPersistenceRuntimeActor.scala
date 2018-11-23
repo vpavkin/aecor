@@ -10,7 +10,10 @@ import aecornext.data._
 import aecornext.encoding.WireProtocol.Invocation
 import aecornext.encoding.syntax._
 import aecornext.encoding.{ KeyDecoder, WireProtocol }
-import aecornext.runtime.akkapersistence.AkkaPersistenceRuntimeActor.{ CommandResult, HandleCommand }
+import aecornext.runtime.akkapersistence.AkkaPersistenceRuntimeActor.{
+  CommandResult,
+  HandleCommand
+}
 import aecornext.runtime.akkapersistence.SnapshotPolicy.{ EachNumberOfEvents, Never }
 import aecornext.runtime.akkapersistence.serialization.{
   Message,
@@ -178,6 +181,7 @@ private[akkapersistence] final class AkkaPersistenceRuntimeActor[M[_[_]], F[_], 
     M.decoder
       .decodeValue(commandBytes) match {
       case Attempt.Successful(pair) =>
+        log.debug("[{}] [{}] Received invocation [{}]", self.path, persistenceId, pair.first.toString)
         performInvocation(pair.first, pair.second)
       case Attempt.Failure(cause) =>
         val decodingError = new IllegalArgumentException(cause.messageWithContext)
