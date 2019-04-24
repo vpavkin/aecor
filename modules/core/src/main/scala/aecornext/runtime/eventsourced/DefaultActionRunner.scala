@@ -6,7 +6,7 @@ import aecornext.runtime.{ EventJournal, NoopKeyValueStore }
 import cats.MonadError
 import cats.data.NonEmptyChain
 import cats.effect.Sync
-import fs2.async.Ref
+import cats.effect.concurrent.Ref
 import cats.implicits._
 
 final class DefaultActionRunner[F[_], K, S, E] private (
@@ -40,7 +40,7 @@ final class DefaultActionRunner[F[_], K, S, E] private (
   private def getInternal: F[InternalState[S]] =
     ref.get.flatMap {
       case Some(s) => s.pure[F]
-      case None    => loadState.flatTap(s => ref.setSync(s.some))
+      case None    => loadState.flatTap(s => ref.set(s.some))
     }
 
   private def loadState: F[InternalState[S]] =
@@ -92,7 +92,7 @@ final class DefaultActionRunner[F[_], K, S, E] private (
   }
 
   private def setInternal(s: InternalState[S]): F[Unit] =
-    ref.setSync(s.some)
+    ref.set(s.some)
 }
 
 object DefaultActionRunner {
@@ -103,7 +103,7 @@ object DefaultActionRunner {
     journal: EventJournal[F, K, E],
     snapshotting: Option[Snapshotting[F, K, S]]
   ): F[ActionRunner[F, S, E]] =
-    Ref[F, Option[InternalState[S]]](
+    Ref.of[F, Option[InternalState[S]]](
       none[InternalState[S]])
       .map(ref => new DefaultActionRunner(key, initial, update, journal, snapshotting, ref))
 }

@@ -6,7 +6,7 @@ import boopickle.Default._
 import cats.effect.Sync
 import cats.implicits._
 import cats.tagless.autoFunctorK
-import fs2.async.Ref
+import cats.effect.concurrent.Ref
 
 @boopickleWireProtocol
 @autoFunctorK
@@ -18,10 +18,10 @@ trait Counter[F[_]] {
 
 object Counter {
   def inmem[F[_]: Sync]: F[Counter[F]] =
-    Ref[F, Long](0L).map { ref =>
+    Ref.of[F, Long](0L).map { ref =>
       new Counter[F] {
-        override def increment: F[Long] = ref.modify(_ + 1L) >> value
-        override def decrement: F[Long] = ref.modify(_ - 1L) >> value
+        override def increment: F[Long] = ref.update(_ + 1L) >> value
+        override def decrement: F[Long] = ref.update(_ - 1L) >> value
         override def value: F[Long] = ref.get
       }
     }

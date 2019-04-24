@@ -2,20 +2,20 @@ import ReleaseTransformations._
 import sbtrelease.Version.Bump
 import pl.project13.scala.sbt._
 
-lazy val buildSettings = inThisBuild(Seq(organization := "io.aecor", scalaVersion := "2.12.4"))
+lazy val buildSettings = inThisBuild(Seq(organization := "io.aecor", scalaVersion := "2.12.7"))
 
 lazy val akkaVersion = "2.5.8"
 lazy val akkaPersistenceCassandraVersion = "0.57"
 
-lazy val catsVersion = "1.3.1"
-lazy val catsEffectVersion = "0.10"
+lazy val catsVersion = "1.6.0"
+lazy val catsEffectVersion = "1.2.0"
 lazy val scodecVersion = "1.10.4"
 lazy val logbackVersion = "1.1.7"
 lazy val cassandraDriverExtrasVersion = "3.1.0"
 lazy val jsr305Version = "3.0.1"
 lazy val boopickleVersion = "1.3.0"
-lazy val monocleVersion = "1.5.0-cats"
-lazy val fs2Version = "0.10.6"
+lazy val monocleVersion = "1.5.1-cats"
+lazy val fs2Version = "1.0.4"
 lazy val log4catsVersion = "0.2.0-M1"
 
 lazy val scalaCheckVersion = "1.13.4"
@@ -27,11 +27,11 @@ lazy val scalametaVersion = "1.8.0"
 
 // Example dependencies
 
-lazy val circeVersion = "0.9.3"
-lazy val http4sVersion = "0.18.20"
-lazy val scalametaParadiseVersion = "3.0.0-M10"
+lazy val circeVersion = "0.10.1"
+lazy val http4sVersion = "0.20.0"
+lazy val scalametaParadiseVersion = "3.0.0-M11"
 
-lazy val catsTaglessVersion = "0.1.0"
+lazy val catsTaglessVersion = "0.2.0"
 
 lazy val commonSettings = Seq(
   resolvers += "jitpack" at "https://jitpack.io",
