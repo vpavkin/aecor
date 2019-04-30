@@ -2,7 +2,7 @@ import ReleaseTransformations._
 import sbtrelease.Version.Bump
 import pl.project13.scala.sbt._
 
-lazy val buildSettings = inThisBuild(Seq(organization := "io.aecor", scalaVersion := "2.12.7"))
+lazy val buildSettings = inThisBuild(Seq(organization := "io.aecor", scalaVersion := "2.12.8"))
 
 lazy val akkaVersion = "2.5.8"
 lazy val akkaPersistenceCassandraVersion = "0.57"
@@ -14,7 +14,7 @@ lazy val logbackVersion = "1.1.7"
 lazy val cassandraDriverExtrasVersion = "3.1.0"
 lazy val jsr305Version = "3.0.1"
 lazy val boopickleVersion = "1.3.0"
-lazy val monocleVersion = "1.5.1-cats"
+lazy val monocleVersion = "1.6.0-M4"
 lazy val fs2Version = "1.0.4"
 lazy val log4catsVersion = "0.2.0-M1"
 
@@ -31,7 +31,7 @@ lazy val circeVersion = "0.10.1"
 lazy val http4sVersion = "0.20.0"
 lazy val scalametaParadiseVersion = "3.0.0-M11"
 
-lazy val catsTaglessVersion = "0.2.0"
+lazy val catsTaglessVersion = "0.5"
 
 lazy val commonSettings = Seq(
   resolvers += "jitpack" at "https://jitpack.io",
@@ -129,6 +129,7 @@ lazy val benchmarks = aecorModule("benchmarks", "Aecor Benchmarks")
 lazy val coreSettings = Seq(
   libraryDependencies ++= Seq(
     "org.typelevel" %% "cats-tagless-macros" % catsTaglessVersion,
+    "org.typelevel" %% "cats-tagless-legacy-macros" % catsTaglessVersion,
     "com.chuusai" %% "shapeless" % shapelessVersion,
     "org.typelevel" %% "cats-core" % catsVersion,
     "org.typelevel" %% "cats-effect" % catsEffectVersion,
@@ -190,7 +191,7 @@ lazy val exampleSettings = {
       Seq(
 //        "com.github.krasserm" %% "streamz-converter" % "0.10-M1",
         "co.fs2" %% "fs2-core" % fs2Version,
-        "org.typelevel" %% "cats-mtl-core" % "0.4.0",
+        "org.typelevel" %% "cats-mtl-core" % "0.5.0",
         "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
         "org.http4s" %% "http4s-dsl" % http4sVersion,
         "org.http4s" %% "http4s-blaze-server" % http4sVersion,
@@ -206,7 +207,7 @@ lazy val exampleSettings = {
 
 lazy val testKitSettings = Seq(
   libraryDependencies ++= Seq(
-    "org.typelevel" %% "cats-mtl-core" % "0.4.0",
+    "org.typelevel" %% "cats-mtl-core" % "0.5.0",
     "com.github.julien-truffaut" %% "monocle-core" % monocleVersion,
     "com.github.julien-truffaut" %% "monocle-macro" % monocleVersion
   )
