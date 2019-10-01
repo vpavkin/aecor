@@ -18,8 +18,8 @@
     <logger name="akka.cluster.sharding.PersistentShard" level="WARN" />
     <logger name="akka.persistence.cassandra.query.EventsByTagPublisher" level="OFF" />
     <logger name="akka.actor.LocalActorRefProvider(akka://aecor-example)" level="OFF" />
-    <logger name="aecornext.aggregate.AggregateActor" level="OFF" />
+    <logger name="aecor.aggregate.AggregateActor" level="OFF" />
     <logger name="com.datastax.driver.core.Connection" level="WARN" />
-    <logger name="aecornext.schedule.CassandraScheduleEntryRepository" level="WARN" />
-    <!--<logger name="aecornext.schedule.ScheduleProcess" level="WARN" />-->
+    <logger name="aecor.schedule.CassandraScheduleEntryRepository" level="WARN" />
+    <!--<logger name="aecor.schedule.ScheduleProcess" level="WARN" />-->
 </configuration>

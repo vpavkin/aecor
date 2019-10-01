@@ -1,4 +1,4 @@
-package aecornext
+package aecor
 
 import cats.Monad
 import cats.mtl.MonadState

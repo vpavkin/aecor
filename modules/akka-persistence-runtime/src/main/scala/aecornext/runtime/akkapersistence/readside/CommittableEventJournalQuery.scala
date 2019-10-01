@@ -1,8 +1,8 @@
-package aecornext.runtime.akkapersistence.readside
+package aecor.runtime.akkapersistence.readside
 
-import aecornext.data.{ Committable, ConsumerId, EventTag, TagConsumer }
-import aecornext.runtime.KeyValueStore
-import aecornext.util.effect._
+import aecor.data.{ Committable, ConsumerId, EventTag, TagConsumer }
+import aecor.runtime.KeyValueStore
+import aecor.util.effect._
 import akka.NotUsed
 import akka.stream.scaladsl.Source
 import cats.effect.Effect

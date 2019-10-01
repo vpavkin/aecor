@@ -1,4 +1,4 @@
-package aecornext.runtime.akkapersistence.serialization
+package aecor.runtime.akkapersistence.serialization
 
 trait PersistentEncoder[A] {
   def encode(a: A): PersistentRepr

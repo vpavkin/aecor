@@ -1,4 +1,4 @@
-package aecornext.util
+package aecor.util
 
 import cats.effect.{ Effect, IO, LiftIO }
 

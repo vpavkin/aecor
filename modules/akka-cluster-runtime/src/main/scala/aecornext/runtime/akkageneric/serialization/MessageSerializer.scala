@@ -1,7 +1,7 @@
-package aecornext.runtime.akkageneric.serialization
+package aecor.runtime.akkageneric.serialization
 
-import aecornext.runtime.akkageneric.GenericAkkaRuntime.KeyedCommand
-import aecornext.runtime.akkageneric.GenericAkkaRuntimeActor.{ Command, CommandResult }
+import aecor.runtime.akkageneric.GenericAkkaRuntime.KeyedCommand
+import aecor.runtime.akkageneric.GenericAkkaRuntimeActor.{ Command, CommandResult }
 import akka.actor.ExtendedActorSystem
 import akka.serialization.{ BaseSerializer, SerializerWithStringManifest }
 import com.google.protobuf.ByteString

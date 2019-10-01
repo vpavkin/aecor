@@ -1,4 +1,4 @@
-package aecornext.tests
+package aecor.tests
 
 import akka.actor.ActorSystem
 import akka.event.{Logging, LoggingAdapter}

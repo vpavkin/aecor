@@ -1,22 +1,22 @@
-package aecornext.distributedprocessing
+package aecor.distributedprocessing
 
-import aecornext.distributedprocessing.DistributedProcessing._
-import aecornext.distributedprocessing.DistributedProcessingWorker.KeepRunning
-import aecornext.distributedprocessing.serialization.Message
-import aecornext.util.effect._
+import aecor.distributedprocessing.DistributedProcessing._
+import aecor.distributedprocessing.DistributedProcessingWorker.KeepRunning
+import aecor.distributedprocessing.serialization.Message
+import aecor.util.effect._
 import akka.actor.{ Actor, ActorLogging, Props, Status }
 import akka.pattern._
 import cats.effect.Effect
 import cats.implicits._
 
-private[aecornext] object DistributedProcessingWorker {
+private[aecor] object DistributedProcessingWorker {
   def props[F[_]: Effect](processWithId: Int => Process[F], processName: String): Props =
     Props(new DistributedProcessingWorker[F](processWithId, processName))
 
   final case class KeepRunning(workerId: Int) extends Message
 }
 
-private[aecornext] final class DistributedProcessingWorker[F[_]: Effect](
+private[aecor] final class DistributedProcessingWorker[F[_]: Effect](
   processFor: Int => Process[F],
   processName: String
 ) extends Actor

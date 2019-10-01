@@ -1,7 +1,7 @@
-package aecornext.encoding
+package aecor.encoding
 
-import aecornext.data.PairE
-import aecornext.encoding.WireProtocol.Invocation
+import aecor.data.PairE
+import aecor.encoding.WireProtocol.Invocation
 import scodec.bits.BitVector
 import scodec.{ Decoder, Encoder }
 

@@ -1,9 +1,9 @@
-package io.aecornext.benchmarks
+package io.aecor.benchmarks
 
 // Must not be in default package
 import java.util.concurrent.TimeUnit
 
-import aecornext.data.Composer
+import aecor.data.Composer
 import org.openjdk.jmh.annotations._
 
 /* Default settings for benchmarks in this class */

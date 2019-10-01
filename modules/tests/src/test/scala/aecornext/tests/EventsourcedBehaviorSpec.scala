@@ -1,9 +1,9 @@
-package aecornext.tests
+package aecor.tests
 
-import aecornext.MonadAction
-import aecornext.data._
-import aecornext.tests.e2e.CounterEvent.{ CounterDecremented, CounterIncremented }
-import aecornext.tests.e2e.{ Counter, CounterEvent, CounterState }
+import aecor.MonadAction
+import aecor.data._
+import aecor.tests.e2e.CounterEvent.{ CounterDecremented, CounterIncremented }
+import aecor.tests.e2e.{ Counter, CounterEvent, CounterState }
 import cats.{ Id, Monad }
 import org.scalatest.{ FlatSpec, Matchers }
 import cats.implicits._

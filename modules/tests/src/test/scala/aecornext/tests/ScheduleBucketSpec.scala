@@ -1,10 +1,10 @@
-package aecornext.tests
+package aecor.tests
 
 import java.time._
 
-import aecornext.data.{ ActionT, Folded}
-import aecornext.schedule.ScheduleEvent.{ScheduleEntryAdded, ScheduleEntryFired}
-import aecornext.schedule.{DefaultScheduleBucket, ScheduleEvent, ScheduleState}
+import aecor.data.{ ActionT, Folded}
+import aecor.schedule.ScheduleEvent.{ScheduleEntryAdded, ScheduleEntryFired}
+import aecor.schedule.{DefaultScheduleBucket, ScheduleEvent, ScheduleState}
 import cats.Id
 import cats.data.Chain
 import org.scalatest.{FlatSpec, Matchers}

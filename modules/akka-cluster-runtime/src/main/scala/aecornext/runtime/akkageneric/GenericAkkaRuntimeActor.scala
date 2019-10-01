@@ -1,27 +1,27 @@
-package aecornext.runtime.akkageneric
+package aecor.runtime.akkageneric
 
 import java.net.URLDecoder
 import java.nio.charset.StandardCharsets
 import java.util.UUID
 
-import aecornext.encoding.WireProtocol.Invocation
-import aecornext.encoding.{ KeyDecoder, WireProtocol }
-import aecornext.runtime.akkageneric.GenericAkkaRuntimeActor.{ Command, CommandResult }
-import aecornext.runtime.akkageneric.serialization.Message
+import aecor.encoding.WireProtocol.Invocation
+import aecor.encoding.{ KeyDecoder, WireProtocol }
+import aecor.runtime.akkageneric.GenericAkkaRuntimeActor.{ Command, CommandResult }
+import aecor.runtime.akkageneric.serialization.Message
 import akka.actor.{ Actor, ActorLogging, Props, ReceiveTimeout, Stash, Status }
 import akka.cluster.sharding.ShardRegion
 import akka.pattern.pipe
 import cats.effect.{ Effect, IO }
 import scodec.{ Attempt, Encoder }
 import scodec.bits.BitVector
-import aecornext.encoding.syntax._
-import aecornext.util.effect._
+import aecor.encoding.syntax._
+import aecor.util.effect._
 import scala.concurrent.duration.FiniteDuration
 import scala.util.control.NonFatal
 import scala.util.{ Failure, Success, Try }
 import cats.syntax.apply._
 
-private[aecornext] object GenericAkkaRuntimeActor {
+private[aecor] object GenericAkkaRuntimeActor {
   def props[K: KeyDecoder, M[_[_]]: WireProtocol, F[_]: Effect](
     createBehavior: K => F[M[F]],
     idleTimeout: FiniteDuration
@@ -33,7 +33,7 @@ private[aecornext] object GenericAkkaRuntimeActor {
   private[akkageneric] case object Stop
 }
 
-private[aecornext] final class GenericAkkaRuntimeActor[K: KeyDecoder, M[_[_]], F[_]: Effect](
+private[aecor] final class GenericAkkaRuntimeActor[K: KeyDecoder, M[_[_]], F[_]: Effect](
   createBehavior: K => F[M[F]],
   idleTimeout: FiniteDuration
 )(implicit M: WireProtocol[M])

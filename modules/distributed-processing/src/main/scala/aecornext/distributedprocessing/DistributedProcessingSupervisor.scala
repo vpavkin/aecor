@@ -1,11 +1,11 @@
-package aecornext.distributedprocessing
+package aecor.distributedprocessing
 
-import aecornext.distributedprocessing.DistributedProcessingSupervisor.{
+import aecor.distributedprocessing.DistributedProcessingSupervisor.{
   GracefulShutdown,
   ShutdownCompleted,
   Tick
 }
-import aecornext.distributedprocessing.DistributedProcessingWorker.KeepRunning
+import aecor.distributedprocessing.DistributedProcessingWorker.KeepRunning
 import akka.actor.{ Actor, ActorLogging, ActorRef, Props, Terminated }
 import akka.cluster.sharding.ShardRegion
 

@@ -1,7 +1,7 @@
-package aecornext.schedule.process
+package aecor.schedule.process
 
-import aecornext.data.EntityEvent
-import aecornext.schedule.{ ScheduleBucketId, ScheduleEvent }
+import aecor.data.EntityEvent
+import aecor.schedule.{ ScheduleBucketId, ScheduleEvent }
 
 trait ScheduleEventJournal[F[_]] {
   def processNewEvents(f: EntityEvent[ScheduleBucketId, ScheduleEvent] => F[Unit]): F[Unit]

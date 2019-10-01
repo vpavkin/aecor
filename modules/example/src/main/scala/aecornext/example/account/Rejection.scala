@@ -1,6 +1,6 @@
-package aecornext.example.account
+package aecor.example.account
 
-import aecornext.macros.boopickle.BoopickleCodec._
+import aecor.macros.boopickle.BoopickleCodec._
 import scodec.Codec
 
 sealed abstract class Rejection extends Product with Serializable

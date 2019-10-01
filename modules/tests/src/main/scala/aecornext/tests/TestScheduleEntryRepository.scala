@@ -1,11 +1,11 @@
-package aecornext.tests.e2e
+package aecor.tests.e2e
 
 import java.time.LocalDateTime
 
-import aecornext.schedule.CassandraScheduleEntryRepository.TimeBucket
-import aecornext.schedule.{ ScheduleBucketId, ScheduleEntryRepository }
-import aecornext.schedule.ScheduleEntryRepository.ScheduleEntry
-import aecornext.testkit._
+import aecor.schedule.CassandraScheduleEntryRepository.TimeBucket
+import aecor.schedule.{ ScheduleBucketId, ScheduleEntryRepository }
+import aecor.schedule.ScheduleEntryRepository.ScheduleEntry
+import aecor.testkit._
 import monocle.Lens
 import cats.mtl.MonadState
 import cats.implicits._

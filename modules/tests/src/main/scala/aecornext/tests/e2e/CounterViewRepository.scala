@@ -1,9 +1,9 @@
-package aecornext.tests.e2e
+package aecor.tests.e2e
 
-import aecornext.tests.e2e.TestCounterViewRepository.State
+import aecor.tests.e2e.TestCounterViewRepository.State
 import cats.mtl.MonadState
 import monocle.Lens
-import aecornext.testkit._
+import aecor.testkit._
 
 trait CounterViewRepository[F[_]] {
   def getCounterState(id: CounterId): F[Option[Long]]

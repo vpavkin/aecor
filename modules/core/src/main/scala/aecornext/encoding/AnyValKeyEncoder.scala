@@ -1,4 +1,4 @@
-package aecornext.encoding
+package aecor.encoding
 
 import shapeless.Unwrapped
 

@@ -1,11 +1,11 @@
-package aecornext.data
-import aecornext.data.Folded.{ Impossible, Next }
-import aecornext.data.Folded.syntax.impossible
+package aecor.data
+import aecor.data.Folded.{ Impossible, Next }
+import aecor.data.Folded.syntax.impossible
 import cats.{ Applicative, Functor, Monad, MonadError, ~> }
 import cats.data.{ Chain, NonEmptyChain }
 import cats.implicits._
 import Folded.syntax._
-import aecornext.{ MonadActionLift, MonadActionLiftReject }
+import aecor.{ MonadActionLift, MonadActionLiftReject }
 import cats.tagless.FunctorK
 
 final class ActionT[F[_], S, E, A] private (

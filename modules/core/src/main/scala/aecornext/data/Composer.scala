@@ -1,4 +1,4 @@
-package aecornext.data
+package aecor.data
 
 import scala.annotation.tailrec
 import scala.util.Try

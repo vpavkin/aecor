@@ -1,6 +1,6 @@
-package aecornext.runtime
+package aecor.runtime
 
-import aecornext.data.Folded
+import aecor.data.Folded
 import cats.data.NonEmptyChain
 
 /**

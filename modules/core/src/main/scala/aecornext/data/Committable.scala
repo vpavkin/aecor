@@ -1,6 +1,6 @@
-package aecornext.data
+package aecor.data
 
-import aecornext.Has
+import aecor.Has
 import cats.implicits._
 import cats.{ Applicative, Eval, Functor, Monad, Traverse }
 

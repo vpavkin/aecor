@@ -41,7 +41,7 @@ final case class SubscriptionId(value: java.util.UUID) extends AnyVal
 Then define what actions we're able to perform on `Subscription`
 
 ```scala
-import aecornext.macros.boopickleWireProtocol
+import aecor.macros.boopickleWireProtocol
 import cats.tagless.autoFunctorK
 import boopickle.Default._
 
@@ -66,7 +66,7 @@ Also being polymorphic in effect improves the reuse of this interface, you'll se
 We are event sourced, so let's define our events:
 
 ```scala
-import aecornext.runtime.akkapersistence.serialization._
+import aecor.runtime.akkapersistence.serialization._
 
 sealed abstract class SubscriptionEvent extends Product with Serializable
 object SubscriptionEvent {
@@ -85,7 +85,7 @@ I've intentionally omitted implementation of `PersistentEncoder` and `Persistent
 Let's define a state on which `Subscription` operates.
 
 ```scala
-import aecornext.data.Folded.syntax._
+import aecor.data.Folded.syntax._
 import SubscriptionState._
 
 final case class SubscriptionState(status: Status) {
@@ -183,7 +183,7 @@ Now when actions are defined we're ready to deploy
 ```scala
 
 import cats.effect.IO
-import aecornext.runtime.akkapersistence._
+import aecor.runtime.akkapersistence._
 
 val system = ActorSystem("system")
 

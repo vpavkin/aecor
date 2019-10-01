@@ -1,4 +1,4 @@
-package aecornext.data
+package aecor.data
 import cats.Order
 
 final case class EventTag(value: String) extends AnyVal

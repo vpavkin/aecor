@@ -1,14 +1,14 @@
-package aecornext.runtime.akkapersistence
+package aecor.runtime.akkapersistence
 
-import aecornext.data.{ EventsourcedBehavior, Tagging }
-import aecornext.encoding.WireProtocol.Encoded
-import aecornext.encoding.syntax._
-import aecornext.encoding.{ KeyDecoder, KeyEncoder, WireProtocol }
-import aecornext.runtime.akkapersistence.AkkaPersistenceRuntime._
-import aecornext.runtime.akkapersistence.AkkaPersistenceRuntimeActor.CommandResult
-import aecornext.runtime.akkapersistence.readside.{ AkkaPersistenceEventJournalQuery, JournalQuery }
-import aecornext.runtime.akkapersistence.serialization.{ Message, PersistentDecoder, PersistentEncoder }
-import aecornext.util.effect._
+import aecor.data.{ EventsourcedBehavior, Tagging }
+import aecor.encoding.WireProtocol.Encoded
+import aecor.encoding.syntax._
+import aecor.encoding.{ KeyDecoder, KeyEncoder, WireProtocol }
+import aecor.runtime.akkapersistence.AkkaPersistenceRuntime._
+import aecor.runtime.akkapersistence.AkkaPersistenceRuntimeActor.CommandResult
+import aecor.runtime.akkapersistence.readside.{ AkkaPersistenceEventJournalQuery, JournalQuery }
+import aecor.runtime.akkapersistence.serialization.{ Message, PersistentDecoder, PersistentEncoder }
+import aecor.util.effect._
 import akka.actor.ActorSystem
 import akka.cluster.sharding.{ ClusterSharding, ShardRegion }
 import akka.pattern.ask

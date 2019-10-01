@@ -1,8 +1,8 @@
-package aecornext.runtime.eventsourced
-import aecornext.data.{ ActionT, Folded }
-import aecornext.data.Folded.{ Impossible, Next }
-import aecornext.runtime.Eventsourced.{ BehaviorFailure, InternalState, Snapshotting }
-import aecornext.runtime.{ EventJournal, NoopKeyValueStore }
+package aecor.runtime.eventsourced
+import aecor.data.{ ActionT, Folded }
+import aecor.data.Folded.{ Impossible, Next }
+import aecor.runtime.Eventsourced.{ BehaviorFailure, InternalState, Snapshotting }
+import aecor.runtime.{ EventJournal, NoopKeyValueStore }
 import cats.MonadError
 import cats.data.NonEmptyChain
 import cats.effect.Sync

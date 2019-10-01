@@ -1,8 +1,8 @@
-package aecornext.example.transaction
-import aecornext.example.account.AccountId
-import aecornext.example.common.Amount
-import aecornext.example.transaction.TransactionRoute.ApiResult
-import aecornext.example.transaction.transaction.Transactions
+package aecor.example.transaction
+import aecor.example.account.AccountId
+import aecor.example.common.Amount
+import aecor.example.transaction.TransactionRoute.ApiResult
+import aecor.example.transaction.transaction.Transactions
 import cats.effect.{ Concurrent, Timer }
 import cats.implicits._
 

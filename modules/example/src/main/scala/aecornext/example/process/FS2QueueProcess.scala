@@ -1,6 +1,6 @@
-package aecornext.example.process
+package aecor.example.process
 
-import aecornext.distributedprocessing.DistributedProcessing.{ Process, RunningProcess }
+import aecor.distributedprocessing.DistributedProcessing.{ Process, RunningProcess }
 import cats.effect.Concurrent
 import cats.effect.concurrent.Deferred
 import cats.implicits._

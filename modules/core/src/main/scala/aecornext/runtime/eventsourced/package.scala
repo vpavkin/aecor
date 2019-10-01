@@ -1,5 +1,5 @@
-package aecornext.runtime
-import aecornext.data.ActionT
+package aecor.runtime
+import aecor.data.ActionT
 import cats.arrow.FunctionK
 
 package object eventsourced {

@@ -1,12 +1,12 @@
-package aecornext.tests.e2e
+package aecor.tests.e2e
 
-import aecornext.MonadAction
-import aecornext.data.Folded.syntax._
-import aecornext.data._
-import aecornext.data.EventsourcedBehavior
-import aecornext.macros.boopickleWireProtocol
+import aecor.MonadAction
+import aecor.data.Folded.syntax._
+import aecor.data._
+import aecor.data.EventsourcedBehavior
+import aecor.macros.boopickleWireProtocol
 import boopickle.Default._
-import aecornext.tests.e2e.notification.NotificationEvent.{ NotificationCreated, NotificationSent }
+import aecor.tests.e2e.notification.NotificationEvent.{ NotificationCreated, NotificationSent }
 import cats.Monad
 import cats.tagless.autoFunctorK
 

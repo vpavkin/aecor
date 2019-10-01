@@ -1,8 +1,8 @@
-package aecornext.testkit
+package aecor.testkit
 
-import aecornext.data._
-import aecornext.runtime.EventJournal
-import aecornext.testkit.StateEventJournal.State
+import aecor.data._
+import aecor.runtime.EventJournal
+import aecor.testkit.StateEventJournal.State
 import cats.data.{Chain, NonEmptyChain}
 import cats.implicits._
 import cats.mtl.MonadState

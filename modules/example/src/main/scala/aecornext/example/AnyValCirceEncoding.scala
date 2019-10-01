@@ -1,4 +1,4 @@
-package aecornext.example
+package aecor.example
 
 import io.circe.{ Decoder, Encoder }
 import shapeless.Unwrapped

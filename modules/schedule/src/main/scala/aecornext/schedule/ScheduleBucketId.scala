@@ -1,7 +1,7 @@
-package aecornext.schedule
+package aecor.schedule
 
-import aecornext.data.Composer
-import aecornext.encoding.{ KeyDecoder, KeyEncoder }
+import aecor.data.Composer
+import aecor.encoding.{ KeyDecoder, KeyEncoder }
 
 final case class ScheduleBucketId(scheduleName: String, scheduleBucket: String)
 

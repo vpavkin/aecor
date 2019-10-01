@@ -1,8 +1,8 @@
-package aecornext.schedule
+package aecor.schedule
 
 import java.time.LocalDateTime
 
-import aecornext.schedule.ScheduleEntryRepository.ScheduleEntry
+import aecor.schedule.ScheduleEntryRepository.ScheduleEntry
 
 trait ScheduleEntryRepository[F[_]] {
   def insertScheduleEntry(scheduleBucketId: ScheduleBucketId,

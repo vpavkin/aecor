@@ -1,12 +1,12 @@
-package aecornext.schedule.process
+package aecor.schedule.process
 
 import java.time.temporal.ChronoUnit
 import java.time.{Clock => _, _}
 
-import aecornext.data._
-import aecornext.runtime.KeyValueStore
-import aecornext.schedule.ScheduleEvent.{ScheduleEntryAdded, ScheduleEntryFired}
-import aecornext.schedule.{ScheduleBucket, ScheduleBucketId, ScheduleEntryRepository}
+import aecor.data._
+import aecor.runtime.KeyValueStore
+import aecor.schedule.ScheduleEvent.{ScheduleEntryAdded, ScheduleEntryFired}
+import aecor.schedule.{ScheduleBucket, ScheduleBucketId, ScheduleEntryRepository}
 import cats.Monad
 import cats.implicits._
 
@@ -22,7 +22,7 @@ object ScheduleProcess {
                          buckets: ScheduleBucketId => ScheduleBucket[F],
                          clock: F[LocalDateTime],
                          parallelism: Int): F[Unit] = {
-    val scheduleEntriesTag = EventTag("io.aecornext.ScheduleDueEntries")
+    val scheduleEntriesTag = EventTag("io.aecor.ScheduleDueEntries")
 
     val tagConsumerId = TagConsumer(scheduleEntriesTag, consumerId)
 

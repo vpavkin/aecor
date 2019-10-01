@@ -1,7 +1,7 @@
-package aecornext.tests
+package aecor.tests
 
-import aecornext.encoding.WireProtocol
-import aecornext.macros.boopickleWireProtocol
+import aecor.encoding.WireProtocol
+import aecor.macros.boopickleWireProtocol
 import cats.{ Applicative, Functor, Id, ~> }
 import cats.implicits._
 import org.scalatest.{ FunSuite, Matchers }

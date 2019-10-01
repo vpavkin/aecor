@@ -1,6 +1,6 @@
-package aecornext.tests
+package aecor.tests
 
-import aecornext.data.Composer
+import aecor.data.Composer
 import org.scalatest.{ FlatSpec, Matchers }
 
 class ComposerSpec extends FlatSpec with Matchers {

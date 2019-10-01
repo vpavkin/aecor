@@ -1,4 +1,4 @@
-package aecornext.data
+package aecor.data
 
 /**
   * Existential pair of type constructors.

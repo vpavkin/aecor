@@ -1,4 +1,4 @@
-package aecornext.data
+package aecor.data
 
 sealed abstract class Tagging[-A] {
   def tag(a: A): Set[EventTag]

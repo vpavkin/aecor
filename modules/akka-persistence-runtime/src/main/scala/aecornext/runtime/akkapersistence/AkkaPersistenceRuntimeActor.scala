@@ -1,27 +1,27 @@
-package aecornext.runtime.akkapersistence
+package aecor.runtime.akkapersistence
 
 import java.net.URLDecoder
 import java.nio.charset.StandardCharsets
 import java.time.{ Duration, Instant }
 import java.util.UUID
 
-import aecornext.data.Folded.{ Impossible, Next }
-import aecornext.data._
-import aecornext.encoding.WireProtocol.Invocation
-import aecornext.encoding.syntax._
-import aecornext.encoding.{ KeyDecoder, WireProtocol }
-import aecornext.runtime.akkapersistence.AkkaPersistenceRuntimeActor.{
+import aecor.data.Folded.{ Impossible, Next }
+import aecor.data._
+import aecor.encoding.WireProtocol.Invocation
+import aecor.encoding.syntax._
+import aecor.encoding.{ KeyDecoder, WireProtocol }
+import aecor.runtime.akkapersistence.AkkaPersistenceRuntimeActor.{
   CommandResult,
   HandleCommand
 }
-import aecornext.runtime.akkapersistence.SnapshotPolicy.{ EachNumberOfEvents, Never }
-import aecornext.runtime.akkapersistence.serialization.{
+import aecor.runtime.akkapersistence.SnapshotPolicy.{ EachNumberOfEvents, Never }
+import aecor.runtime.akkapersistence.serialization.{
   Message,
   PersistentDecoder,
   PersistentEncoder,
   PersistentRepr
 }
-import aecornext.util.effect._
+import aecor.util.effect._
 import akka.actor.{ ActorLogging, Props, ReceiveTimeout, Stash, Status }
 import akka.cluster.sharding.ShardRegion
 import akka.pattern.pipe

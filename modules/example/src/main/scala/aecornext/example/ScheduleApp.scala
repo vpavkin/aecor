@@ -1,14 +1,14 @@
-package aecornext.example
+package aecor.example
 
 import java.time.{ Clock, LocalDate }
 import java.util.UUID
 
-import aecornext.data.ConsumerId
-import aecornext.distributedprocessing.{ AkkaStreamProcess, DistributedProcessing }
-import aecornext.runtime.akkapersistence.readside.CassandraOffsetStore
-import aecornext.schedule.{ CassandraScheduleEntryRepository, Schedule }
-import aecornext.util.JavaTimeClock
-import aecornext.util.effect._
+import aecor.data.ConsumerId
+import aecor.distributedprocessing.{ AkkaStreamProcess, DistributedProcessing }
+import aecor.runtime.akkapersistence.readside.CassandraOffsetStore
+import aecor.schedule.{ CassandraScheduleEntryRepository, Schedule }
+import aecor.util.JavaTimeClock
+import aecor.util.effect._
 import akka.actor.ActorSystem
 import akka.persistence.cassandra.DefaultJournalCassandraSession
 import akka.persistence.cassandra.session.scaladsl.CassandraSession

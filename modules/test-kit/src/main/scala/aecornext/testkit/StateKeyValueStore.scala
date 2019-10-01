@@ -1,6 +1,6 @@
-package aecornext.testkit
+package aecor.testkit
 
-import aecornext.runtime.KeyValueStore
+import aecor.runtime.KeyValueStore
 import cats.mtl.MonadState
 import monocle.Lens
 

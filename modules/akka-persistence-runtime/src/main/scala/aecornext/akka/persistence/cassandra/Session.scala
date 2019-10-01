@@ -1,4 +1,4 @@
-package aecornext.akka.persistence.cassandra
+package aecor.akka.persistence.cassandra
 
 import java.util.concurrent.Executor
 

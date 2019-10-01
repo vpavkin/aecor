@@ -1,6 +1,6 @@
-package aecornext.tests
+package aecor.tests
 
-import aecornext.data.Folded
+import aecor.data.Folded
 import cats.{ CoflatMap, Eval, Later, Monad, MonadError, Semigroupal }
 import cats.laws.{ ApplicativeLaws, CoflatMapLaws, FlatMapLaws, MonadLaws }
 import cats.laws.discipline._

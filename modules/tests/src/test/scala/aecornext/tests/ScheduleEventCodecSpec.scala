@@ -1,9 +1,9 @@
-package aecornext.tests
+package aecor.tests
 
 import java.time.{Instant, LocalDateTime}
 
-import aecornext.runtime.akkapersistence.serialization.{PersistentDecoder, PersistentEncoder}
-import aecornext.schedule.ScheduleEvent
+import aecor.runtime.akkapersistence.serialization.{PersistentDecoder, PersistentEncoder}
+import aecor.schedule.ScheduleEvent
 import org.scalacheck.Shapeless._
 import org.scalacheck.{Arbitrary, Gen}
 import org.scalatest.prop.PropertyChecks

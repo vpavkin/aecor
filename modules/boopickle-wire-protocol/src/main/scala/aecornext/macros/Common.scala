@@ -1,4 +1,4 @@
-package aecornext.macros
+package aecor.macros
 import scala.meta._
 import scala.collection.immutable._
 

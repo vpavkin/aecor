@@ -1,8 +1,8 @@
-package aecornext.runtime.akkageneric
+package aecor.runtime.akkageneric
 
-import aecornext.runtime.akkageneric.GenericAkkaRuntime.KeyedCommand
-import aecornext.runtime.akkageneric.GenericAkkaRuntimeActor.{ Command, CommandResult }
-import aecornext.runtime.akkageneric.serialization.MessageSerializer
+import aecor.runtime.akkageneric.GenericAkkaRuntime.KeyedCommand
+import aecor.runtime.akkageneric.GenericAkkaRuntimeActor.{ Command, CommandResult }
+import aecor.runtime.akkageneric.serialization.MessageSerializer
 import akka.actor.ActorSystem
 import akka.serialization.SerializationExtension
 import org.scalacheck.Arbitrary

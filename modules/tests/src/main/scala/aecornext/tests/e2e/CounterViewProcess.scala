@@ -1,7 +1,7 @@
-package aecornext.tests.e2e
+package aecor.tests.e2e
 
-import aecornext.data.EntityEvent
-import aecornext.tests.e2e.CounterEvent.{ CounterDecremented, CounterIncremented }
+import aecor.data.EntityEvent
+import aecor.tests.e2e.CounterEvent.{ CounterDecremented, CounterIncremented }
 import cats.Monad
 import cats.implicits._
 

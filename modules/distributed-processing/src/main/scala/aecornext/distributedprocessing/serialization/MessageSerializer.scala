@@ -1,6 +1,6 @@
-package aecornext.distributedprocessing.serialization
+package aecor.distributedprocessing.serialization
 
-import aecornext.distributedprocessing.DistributedProcessingWorker.KeepRunning
+import aecor.distributedprocessing.DistributedProcessingWorker.KeepRunning
 import akka.actor.ExtendedActorSystem
 import akka.serialization.{ BaseSerializer, SerializerWithStringManifest }
 

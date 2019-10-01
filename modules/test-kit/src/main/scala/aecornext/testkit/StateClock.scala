@@ -1,9 +1,9 @@
-package aecornext.testkit
+package aecor.testkit
 
 import java.time.temporal.TemporalAmount
 import java.time.{ Instant, ZoneId }
 
-import aecornext.util.Clock
+import aecor.util.Clock
 import cats.mtl.MonadState
 import monocle.Lens
 

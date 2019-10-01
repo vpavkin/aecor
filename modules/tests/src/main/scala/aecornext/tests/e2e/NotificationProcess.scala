@@ -1,9 +1,9 @@
-package aecornext.tests.e2e
+package aecor.tests.e2e
 
-import aecornext.data.EntityEvent
-import aecornext.tests.e2e.CounterEvent.CounterIncremented
-import aecornext.tests.e2e.notification.{ Notification, NotificationEvent, NotificationId }
-import aecornext.util.FunctionBuilder.syntax._
+import aecor.data.EntityEvent
+import aecor.tests.e2e.CounterEvent.CounterIncremented
+import aecor.tests.e2e.notification.{ Notification, NotificationEvent, NotificationId }
+import aecor.util.FunctionBuilder.syntax._
 import cats.Monad
 import cats.implicits._
 import shapeless.{ :+:, CNil, HNil }

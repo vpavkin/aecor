@@ -1,18 +1,18 @@
-package aecornext.schedule
+package aecor.schedule
 
 import java.time.{ Clock => _, _ }
 import java.util.UUID
 
-import aecornext.data._
-import aecornext.runtime.KeyValueStore
-import aecornext.runtime.akkapersistence._
-import aecornext.runtime.akkapersistence.readside.JournalEntry
-import aecornext.schedule.process.{
+import aecor.data._
+import aecor.runtime.KeyValueStore
+import aecor.runtime.akkapersistence._
+import aecor.runtime.akkapersistence.readside.JournalEntry
+import aecor.schedule.process.{
   DefaultScheduleEventJournal,
   PeriodicProcessRuntime,
   ScheduleProcess
 }
-import aecornext.util.Clock
+import aecor.util.Clock
 import akka.NotUsed
 import akka.actor.ActorSystem
 import akka.stream.Materializer
@@ -50,7 +50,7 @@ object Schedule {
       1.day,
       10.seconds,
       40.seconds,
-      ConsumerId("io.aecornext.schedule.ScheduleProcess")
+      ConsumerId("io.aecor.schedule.ScheduleProcess")
     )
   )(implicit system: ActorSystem, materializer: Materializer): F[Schedule[F]] = {
 

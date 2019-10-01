@@ -1,8 +1,8 @@
-package aecornext.runtime.akkapersistence.readside
+package aecor.runtime.akkapersistence.readside
 
-import aecornext.Has
-import aecornext.data.{ EntityEvent, EventTag, TagConsumer }
-import aecornext.runtime.KeyValueStore
+import aecor.Has
+import aecor.data.{ EntityEvent, EventTag, TagConsumer }
+import aecor.runtime.KeyValueStore
 import akka.NotUsed
 import akka.stream.scaladsl.Source
 import cats.effect.Effect

@@ -1,15 +1,15 @@
-//package aecornext.example
+//package aecor.example
 //
-//import aecornext.data._
-//import aecornext.distributedprocessing.DistributedProcessing
-//import aecornext.example.account.{ AccountRoute, Accounts }
-//import aecornext.example.common.Timestamp
-//import aecornext.example.process.{ FS2QueueProcess, TransactionProcessor }
-//import aecornext.example.transaction.transaction.Transactions
-//import aecornext.example.transaction.{ TransactionEvent, TransactionId, TransactionRoute }
-//import aecornext.runtime.akkapersistence.readside.CassandraOffsetStore
-//import aecornext.runtime.akkapersistence.{ AkkaPersistenceRuntime, CassandraJournalAdapter }
-//import aecornext.util.JavaTimeClock
+//import aecor.data._
+//import aecor.distributedprocessing.DistributedProcessing
+//import aecor.example.account.{ AccountRoute, Accounts }
+//import aecor.example.common.Timestamp
+//import aecor.example.process.{ FS2QueueProcess, TransactionProcessor }
+//import aecor.example.transaction.transaction.Transactions
+//import aecor.example.transaction.{ TransactionEvent, TransactionId, TransactionRoute }
+//import aecor.runtime.akkapersistence.readside.CassandraOffsetStore
+//import aecor.runtime.akkapersistence.{ AkkaPersistenceRuntime, CassandraJournalAdapter }
+//import aecor.util.JavaTimeClock
 //import akka.actor.ActorSystem
 //import akka.persistence.cassandra.DefaultJournalCassandraSession
 //import akka.stream.{ ActorMaterializer, Materializer }

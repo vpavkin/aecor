@@ -1,7 +1,7 @@
-package aecornext.data
+package aecor.data
 
-import aecornext.encoding.WireProtocol
-import aecornext.encoding.WireProtocol.{ Encoded, Invocation }
+import aecor.encoding.WireProtocol
+import aecor.encoding.WireProtocol.{ Encoded, Invocation }
 import cats.data.EitherT
 import cats.~>
 import cats.implicits._

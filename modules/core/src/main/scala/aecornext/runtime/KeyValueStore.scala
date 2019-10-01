@@ -1,4 +1,4 @@
-package aecornext.runtime
+package aecor.runtime
 
 import cats.implicits._
 import cats.tagless.FunctorK

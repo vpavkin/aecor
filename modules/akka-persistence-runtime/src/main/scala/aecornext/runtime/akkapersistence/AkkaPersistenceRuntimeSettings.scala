@@ -1,4 +1,4 @@
-package aecornext.runtime.akkapersistence
+package aecor.runtime.akkapersistence
 
 import java.util.concurrent.TimeUnit
 
@@ -15,12 +15,12 @@ final case class AkkaPersistenceRuntimeSettings(numberOfShards: Int,
 object AkkaPersistenceRuntimeSettings {
 
   /**
-    * Reads config from `aecornext.akka-runtime`, see reference.conf for details
+    * Reads config from `aecor.akka-runtime`, see reference.conf for details
     * @param system Actor system to get config from
     * @return default settings
     */
   def default(system: ActorSystem): AkkaPersistenceRuntimeSettings = {
-    val config = system.settings.config.getConfig("aecornext.akka-runtime")
+    val config = system.settings.config.getConfig("aecor.akka-runtime")
     def getMillisDuration(path: String): FiniteDuration =
       Duration(config.getDuration(path, TimeUnit.MILLISECONDS), TimeUnit.MILLISECONDS)
 

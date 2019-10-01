@@ -1,4 +1,4 @@
-package aecornext.testkit
+package aecor.testkit
 
 import cats.Applicative
 

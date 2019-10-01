@@ -1,4 +1,4 @@
-package aecornext.util
+package aecor.util
 
 import java.time.{ Instant, ZoneId }
 

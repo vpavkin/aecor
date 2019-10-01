@@ -1,6 +1,6 @@
-package aecornext.tests
+package aecor.tests
 
-import aecornext.data.{ EventTag, Tagging }
+import aecor.data.{ EventTag, Tagging }
 import org.scalatest.prop.GeneratorDrivenPropertyChecks
 import org.scalatest.{ FunSuite, Matchers }
 

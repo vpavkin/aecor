@@ -1,4 +1,4 @@
-package aecornext
+package aecor
 
 import cats.data.EitherT
 import cats.{ Applicative, Monad }

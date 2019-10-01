@@ -1,7 +1,7 @@
-package aecornext.runtime
+package aecor.runtime
 
-import aecornext.data._
-import aecornext.runtime.eventsourced.DefaultActionRunner
+import aecor.data._
+import aecor.runtime.eventsourced.DefaultActionRunner
 import cats.effect.Sync
 import cats.implicits._
 import cats.tagless.FunctorK

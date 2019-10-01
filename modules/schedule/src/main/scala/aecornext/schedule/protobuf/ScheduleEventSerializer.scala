@@ -1,6 +1,6 @@
-package aecornext.schedule.protobuf
+package aecor.schedule.protobuf
 
-import aecornext.runtime.akkapersistence.serialization.PersistentReprSerializer
+import aecor.runtime.akkapersistence.serialization.PersistentReprSerializer
 import akka.actor.ExtendedActorSystem
 
 /**

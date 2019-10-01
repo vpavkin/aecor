@@ -1,12 +1,12 @@
-package aecornext.example.account
+package aecor.example.account
 
-import aecornext.MonadActionReject
-import aecornext.data.Folded.syntax._
-import aecornext.data._
-import aecornext.example.account.AccountEvent._
-import aecornext.example.account.EventsourcedAlgebra.AccountState
-import aecornext.example.account.Rejection._
-import aecornext.example.common.Amount
+import aecor.MonadActionReject
+import aecor.data.Folded.syntax._
+import aecor.data._
+import aecor.example.account.AccountEvent._
+import aecor.example.account.EventsourcedAlgebra.AccountState
+import aecor.example.account.Rejection._
+import aecor.example.common.Amount
 import cats.Monad
 import cats.implicits._
 

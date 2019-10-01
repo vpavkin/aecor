@@ -1,4 +1,4 @@
-package aecornext.akka.persistence.cassandra
+package aecor.akka.persistence.cassandra
 
 import akka.Done
 import akka.actor.{ActorSystem, ExtendedActorSystem}
@@ -8,7 +8,7 @@ import akka.persistence.cassandra.session.CassandraSessionSettings
 import akka.persistence.cassandra.session.scaladsl.CassandraSession
 import cats.effect.Effect
 import cats.implicits._
-import aecornext.util.effect._
+import aecor.util.effect._
 import akka.persistence.cassandra.SessionProvider
 
 object DefaultJournalCassandraSession {

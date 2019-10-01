@@ -1,9 +1,9 @@
-package aecornext.tests
+package aecor.tests
 
 import java.nio.ByteBuffer
 import java.nio.charset.StandardCharsets
 
-import aecornext.runtime.akkapersistence.serialization.{
+import aecor.runtime.akkapersistence.serialization.{
   DecodingFailure,
   PersistentDecoder,
   PersistentEncoder,

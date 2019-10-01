@@ -1,16 +1,16 @@
-package aecornext.schedule
+package aecor.schedule
 
 import java.time.LocalDateTime
 import java.util.UUID
 
-import aecornext.data._
-import aecornext.runtime.akkapersistence.readside.{ CommittableEventJournalQuery, JournalEntry }
-import aecornext.util.Clock
+import aecor.data._
+import aecor.runtime.akkapersistence.readside.{ CommittableEventJournalQuery, JournalEntry }
+import aecor.util.Clock
 import akka.NotUsed
 import akka.stream.scaladsl.Source
 import cats.effect.Effect
 import cats.implicits._
-import aecornext.util.effect._
+import aecor.util.effect._
 
 import scala.concurrent.duration.FiniteDuration
 

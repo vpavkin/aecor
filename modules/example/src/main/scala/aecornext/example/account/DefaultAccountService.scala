@@ -1,4 +1,4 @@
-package aecornext.example.account
+package aecor.example.account
 
 import cats.Functor
 import cats.implicits._

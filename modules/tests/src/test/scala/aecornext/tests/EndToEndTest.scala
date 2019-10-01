@@ -1,15 +1,15 @@
-package aecornext.tests
+package aecor.tests
 
 import java.time._
 
-import aecornext.data._
-import aecornext.schedule.ScheduleEntryRepository.ScheduleEntry
-import aecornext.schedule._
-import aecornext.schedule.process.{ScheduleEventJournal, ScheduleProcess}
-import aecornext.testkit.E2eSupport._
-import aecornext.testkit.{E2eSupport, StateClock, StateEventJournal, StateKeyValueStore}
-import aecornext.tests.e2e.notification.{NotificationEvent, NotificationId}
-import aecornext.tests.e2e.{notification, _}
+import aecor.data._
+import aecor.schedule.ScheduleEntryRepository.ScheduleEntry
+import aecor.schedule._
+import aecor.schedule.process.{ScheduleEventJournal, ScheduleProcess}
+import aecor.testkit.E2eSupport._
+import aecor.testkit.{E2eSupport, StateClock, StateEventJournal, StateKeyValueStore}
+import aecor.tests.e2e.notification.{NotificationEvent, NotificationId}
+import aecor.tests.e2e.{notification, _}
 import cats.data.Chain
 import cats.implicits._
 import monocle.macros.GenLens

@@ -1,19 +1,19 @@
-package aecornext.example.transaction
+package aecor.example.transaction
 
-import aecornext.MonadActionReject
-import aecornext.data.Folded.syntax._
-import aecornext.data._
-import aecornext.example.account.AccountId
-import aecornext.example.common.Amount
-import aecornext.example.transaction.Algebra.TransactionInfo
-import aecornext.example.transaction.EventsourcedAlgebra.State
-import aecornext.example.transaction.EventsourcedAlgebra.TransactionStatus.{
+import aecor.MonadActionReject
+import aecor.data.Folded.syntax._
+import aecor.data._
+import aecor.example.account.AccountId
+import aecor.example.common.Amount
+import aecor.example.transaction.Algebra.TransactionInfo
+import aecor.example.transaction.EventsourcedAlgebra.State
+import aecor.example.transaction.EventsourcedAlgebra.TransactionStatus.{
   Authorized,
   Failed,
   Requested,
   Succeeded
 }
-import aecornext.example.transaction.TransactionEvent._
+import aecor.example.transaction.TransactionEvent._
 import cats.Monad
 import cats.implicits._
 

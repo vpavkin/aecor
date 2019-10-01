@@ -1,7 +1,7 @@
-package aecornext.runtime.akkageneric
+package aecor.runtime.akkageneric
 
-import aecornext.encoding.{KeyDecoder, KeyEncoder}
-import aecornext.macros.boopickleWireProtocol
+import aecor.encoding.{KeyDecoder, KeyEncoder}
+import aecor.macros.boopickleWireProtocol
 import boopickle.Default._
 import cats.effect.Sync
 import cats.implicits._

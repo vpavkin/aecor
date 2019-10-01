@@ -1,6 +1,6 @@
-package aecornext.data
+package aecor.data
 
-import aecornext.Has
+import aecor.Has
 import cats.{ Monad, ~> }
 import cats.data.EitherT
 import cats.tagless.FunctorK

@@ -1,10 +1,10 @@
-package aecornext.distributedprocessing
+package aecor.distributedprocessing
 
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 
-import aecornext.distributedprocessing.DistributedProcessing.{ KillSwitch, Process }
-import aecornext.distributedprocessing.DistributedProcessingWorker.KeepRunning
+import aecor.distributedprocessing.DistributedProcessing.{ KillSwitch, Process }
+import aecor.distributedprocessing.DistributedProcessingWorker.KeepRunning
 import akka.actor.{ ActorSystem, SupervisorStrategy }
 import akka.cluster.sharding.{ ClusterSharding, ClusterShardingSettings }
 import akka.pattern.{ BackoffSupervisor, ask }
@@ -13,7 +13,7 @@ import cats.effect.Effect
 import cats.implicits._
 
 import scala.concurrent.duration.{ FiniteDuration, _ }
-import aecornext.util.effect._
+import aecor.util.effect._
 final class DistributedProcessing private (system: ActorSystem) {
 
   /**

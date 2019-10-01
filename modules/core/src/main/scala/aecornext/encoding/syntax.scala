@@ -1,4 +1,4 @@
-package aecornext.encoding
+package aecor.encoding
 import cats.MonadError
 import scodec.Attempt
 

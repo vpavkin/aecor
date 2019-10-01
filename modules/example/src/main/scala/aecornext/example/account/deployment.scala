@@ -1,10 +1,10 @@
-package aecornext.example.account
+package aecor.example.account
 import java.util.UUID
 
-import aecornext.example.common.Timestamp
-import aecornext.runtime.Eventsourced
-import aecornext.runtime.akkapersistence.AkkaPersistenceRuntime
-import aecornext.util.Clock
+import aecor.example.common.Timestamp
+import aecor.runtime.Eventsourced
+import aecor.runtime.akkapersistence.AkkaPersistenceRuntime
+import aecor.util.Clock
 import cats.effect.Effect
 import cats.implicits._
 

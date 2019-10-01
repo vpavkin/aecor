@@ -1,4 +1,4 @@
-package aecornext.runtime.akkapersistence
+package aecor.runtime.akkapersistence
 
 import akka.persistence.query.Offset
 import akka.persistence.query.scaladsl.{ CurrentEventsByTagQuery, EventsByTagQuery }

@@ -1,11 +1,11 @@
-package aecornext.schedule.process
+package aecor.schedule.process
 
 import java.util.UUID
 
-import aecornext.data.{ Committable, ConsumerId, EntityEvent, EventTag }
-import aecornext.runtime.akkapersistence.readside.CommittableEventJournalQuery
-import aecornext.schedule.{ ScheduleBucketId, ScheduleEvent }
-import aecornext.util.effect._
+import aecor.data.{ Committable, ConsumerId, EntityEvent, EventTag }
+import aecor.runtime.akkapersistence.readside.CommittableEventJournalQuery
+import aecor.schedule.{ ScheduleBucketId, ScheduleEvent }
+import aecor.util.effect._
 import akka.stream.Materializer
 import akka.stream.scaladsl.{ Keep, Sink }
 import cats.effect.Effect

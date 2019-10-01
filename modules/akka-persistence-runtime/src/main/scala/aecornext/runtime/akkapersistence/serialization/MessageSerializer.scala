@@ -1,7 +1,7 @@
-package aecornext.runtime.akkapersistence.serialization
+package aecor.runtime.akkapersistence.serialization
 
-import aecornext.runtime.akkapersistence.AkkaPersistenceRuntime.EntityCommand
-import aecornext.runtime.akkapersistence.AkkaPersistenceRuntimeActor.{ CommandResult, HandleCommand }
+import aecor.runtime.akkapersistence.AkkaPersistenceRuntime.EntityCommand
+import aecor.runtime.akkapersistence.AkkaPersistenceRuntimeActor.{ CommandResult, HandleCommand }
 import akka.actor.ExtendedActorSystem
 import akka.serialization.{ BaseSerializer, SerializerWithStringManifest }
 import com.google.protobuf.ByteString

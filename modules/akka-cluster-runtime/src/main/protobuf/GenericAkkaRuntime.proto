@@ -1,7 +1,7 @@
 syntax = "proto2";
 
-package aecornext.runtime.akkageneric.serialization;
-option java_package = "aecornext.runtime.akkageneric.serialization.msg";
+package aecor.runtime.akkageneric.serialization;
+option java_package = "aecor.runtime.akkageneric.serialization.msg";
 option optimize_for = SPEED;
 
 message KeyedCommand {

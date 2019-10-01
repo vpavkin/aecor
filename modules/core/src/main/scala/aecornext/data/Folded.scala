@@ -1,6 +1,6 @@
-package aecornext.data
+package aecor.data
 
-import aecornext.data.Folded.{ Impossible, Next }
+import aecor.data.Folded.{ Impossible, Next }
 import cats.kernel.Eq
 import cats.{ Alternative, Applicative, CoflatMap, Eval, MonadError, Now, Show, Traverse }
 

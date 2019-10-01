@@ -1,11 +1,11 @@
-package aecornext.example.process
+package aecor.example.process
 
-import aecornext.Has
-import aecornext.Has.syntax._
-import aecornext.example.account.{AccountTransactionId, AccountTransactionKind, Accounts}
-import aecornext.example.transaction.Algebra.TransactionInfo
-import aecornext.example.transaction.transaction.Transactions
-import aecornext.example.transaction.{From, TransactionEvent, TransactionId}
+import aecor.Has
+import aecor.Has.syntax._
+import aecor.example.account.{AccountTransactionId, AccountTransactionKind, Accounts}
+import aecor.example.transaction.Algebra.TransactionInfo
+import aecor.example.transaction.transaction.Transactions
+import aecor.example.transaction.{From, TransactionEvent, TransactionId}
 import cats.MonadError
 import cats.implicits._
 

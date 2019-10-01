@@ -1,4 +1,4 @@
-package aecornext.runtime.akkageneric
+package aecor.runtime.akkageneric
 
 import java.util.concurrent.TimeUnit
 
@@ -15,12 +15,12 @@ final case class GenericAkkaRuntimeSettings(numberOfShards: Int,
 object GenericAkkaRuntimeSettings {
 
   /**
-    * Reads config from `aecornext.akka-runtime`, see reference.conf for details
+    * Reads config from `aecor.akka-runtime`, see reference.conf for details
     * @param system Actor system to get config from
     * @return default settings
     */
   def default(system: ActorSystem): GenericAkkaRuntimeSettings = {
-    val config = system.settings.config.getConfig("aecornext.generic-akka-runtime")
+    val config = system.settings.config.getConfig("aecor.generic-akka-runtime")
     def getMillisDuration(path: String): FiniteDuration =
       Duration(config.getDuration(path, TimeUnit.MILLISECONDS), TimeUnit.MILLISECONDS)
 

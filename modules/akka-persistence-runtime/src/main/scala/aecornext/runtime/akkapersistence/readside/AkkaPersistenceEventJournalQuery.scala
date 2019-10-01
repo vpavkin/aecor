@@ -1,9 +1,9 @@
-package aecornext.runtime.akkapersistence.readside
+package aecor.runtime.akkapersistence.readside
 
-import aecornext.data.{ EntityEvent, EventTag }
-import aecornext.encoding.KeyDecoder
-import aecornext.runtime.akkapersistence.{ AkkaPersistenceRuntimeActor, JournalAdapter }
-import aecornext.runtime.akkapersistence.serialization.{ PersistentDecoder, PersistentRepr }
+import aecor.data.{ EntityEvent, EventTag }
+import aecor.encoding.KeyDecoder
+import aecor.runtime.akkapersistence.{ AkkaPersistenceRuntimeActor, JournalAdapter }
+import aecor.runtime.akkapersistence.serialization.{ PersistentDecoder, PersistentRepr }
 import akka.NotUsed
 import akka.persistence.query._
 import akka.stream.scaladsl.Source

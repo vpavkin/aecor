@@ -1,8 +1,8 @@
-package aecornext.runtime.akkapersistence
+package aecor.runtime.akkapersistence
 
-import aecornext.runtime.akkapersistence.SnapshotPolicy.{ EachNumberOfEvents, Never }
-import aecornext.runtime.akkapersistence.serialization.PersistentDecoder.DecodingResult
-import aecornext.runtime.akkapersistence.serialization.{
+import aecor.runtime.akkapersistence.SnapshotPolicy.{ EachNumberOfEvents, Never }
+import aecor.runtime.akkapersistence.serialization.PersistentDecoder.DecodingResult
+import aecor.runtime.akkapersistence.serialization.{
   PersistentDecoder,
   PersistentEncoder,
   PersistentRepr

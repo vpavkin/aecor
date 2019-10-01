@@ -1,7 +1,7 @@
-package aecornext.runtime.akkapersistence.readside
+package aecor.runtime.akkapersistence.readside
 
-import aecornext.data.{ EntityEvent, Folded }
-import aecornext.runtime.KeyValueStore
+import aecor.data.{ EntityEvent, Folded }
+import aecor.runtime.KeyValueStore
 import cats.Monad
 import cats.implicits._
 

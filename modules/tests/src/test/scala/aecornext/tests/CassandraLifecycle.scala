@@ -1,4 +1,4 @@
-package aecornext.tests
+package aecor.tests
 
 import java.io.File
 

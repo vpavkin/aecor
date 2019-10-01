@@ -1,13 +1,13 @@
-package aecornext.tests
+package aecor.tests
 
-import aecornext.data.Tagging
-import aecornext.tests.e2e._
+import aecor.data.Tagging
+import aecor.tests.e2e._
 import akka.actor.ActorSystem
 import akka.testkit.TestKit
 import com.typesafe.config.{Config, ConfigFactory}
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.{FunSuiteLike, Matchers}
-import aecornext.runtime.akkapersistence.{AkkaPersistenceRuntime, CassandraJournalAdapter}
+import aecor.runtime.akkapersistence.{AkkaPersistenceRuntime, CassandraJournalAdapter}
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.Sink
 import cats.effect.IO
@@ -32,7 +32,7 @@ object AkkaPersistenceRuntimeSpec {
             }
           }
         }
-        aecornext.generic-akka-runtime.idle-timeout = 1s
+        aecor.generic-akka-runtime.idle-timeout = 1s
      """).withFallback(CassandraLifecycle.config).withFallback(ConfigFactory.load())
 }
 

@@ -1,12 +1,12 @@
-package aecornext.runtime.akkageneric
+package aecor.runtime.akkageneric
 
-import aecornext.encoding.WireProtocol.Encoded
-import aecornext.encoding.syntax._
-import aecornext.encoding.{ KeyDecoder, KeyEncoder, WireProtocol }
-import aecornext.runtime.akkageneric.GenericAkkaRuntime.KeyedCommand
-import aecornext.runtime.akkageneric.GenericAkkaRuntimeActor.CommandResult
-import aecornext.runtime.akkageneric.serialization.Message
-import aecornext.util.effect._
+import aecor.encoding.WireProtocol.Encoded
+import aecor.encoding.syntax._
+import aecor.encoding.{ KeyDecoder, KeyEncoder, WireProtocol }
+import aecor.runtime.akkageneric.GenericAkkaRuntime.KeyedCommand
+import aecor.runtime.akkageneric.GenericAkkaRuntimeActor.CommandResult
+import aecor.runtime.akkageneric.serialization.Message
+import aecor.util.effect._
 import akka.actor.ActorSystem
 import akka.cluster.sharding.{ ClusterSharding, ShardRegion }
 import akka.pattern._

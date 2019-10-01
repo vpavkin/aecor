@@ -1,10 +1,10 @@
-package aecornext.example.transaction
+package aecor.example.transaction
 
-import aecornext.encoding.{ KeyDecoder, KeyEncoder }
-import aecornext.example.account.AccountId
-import aecornext.example.common.Amount
-import aecornext.example.transaction.Algebra.TransactionInfo
-import aecornext.macros.boopickleWireProtocol
+import aecor.encoding.{ KeyDecoder, KeyEncoder }
+import aecor.example.account.AccountId
+import aecor.example.common.Amount
+import aecor.example.transaction.Algebra.TransactionInfo
+import aecor.macros.boopickleWireProtocol
 import boopickle.Default._
 import cats.tagless.autoFunctorK
 

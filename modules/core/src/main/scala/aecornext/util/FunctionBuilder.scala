@@ -1,4 +1,4 @@
-package aecornext.util
+package aecor.util
 
 import shapeless.{ :+:, ::, CNil, Coproduct, Generic, HList, HNil }
 

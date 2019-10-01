@@ -1,4 +1,4 @@
-package aecornext.runtime.akkageneric
+package aecor.runtime.akkageneric
 
 import akka.actor.ActorSystem
 import akka.testkit.TestKit
@@ -14,7 +14,7 @@ object GenericRuntimeSpec {
   def conf: Config = ConfigFactory.parseString(s"""
         cluster.system-name=test
         cluster.port = 51001
-        aecornext.generic-akka-runtime.idle-timeout = 1s
+        aecor.generic-akka-runtime.idle-timeout = 1s
      """).withFallback(ConfigFactory.load())
 }
 

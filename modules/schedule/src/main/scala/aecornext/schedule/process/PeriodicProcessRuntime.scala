@@ -1,7 +1,7 @@
-package aecornext.schedule.process
+package aecor.schedule.process
 
-import aecornext.distributedprocessing.{ AkkaStreamProcess, DistributedProcessing }
-import aecornext.util.effect._
+import aecor.distributedprocessing.{ AkkaStreamProcess, DistributedProcessing }
+import aecor.util.effect._
 import akka.NotUsed
 import akka.actor.ActorSystem
 import akka.stream.Materializer

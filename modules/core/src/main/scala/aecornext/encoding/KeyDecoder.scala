@@ -1,4 +1,4 @@
-package aecornext.encoding
+package aecor.encoding
 import java.util.UUID
 import java.util.regex.Pattern
 

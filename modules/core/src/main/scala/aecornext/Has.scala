@@ -1,4 +1,4 @@
-package aecornext
+package aecor
 
 trait Has[T, A] {
   def get(t: T): A

@@ -1,6 +1,6 @@
-package aecornext.runtime.akkapersistence.serialization
+package aecor.runtime.akkapersistence.serialization
 
 /**
-  * Marker trait for all protobuf-serializable messages in `aecornext.runtime.akkapersistence`.
+  * Marker trait for all protobuf-serializable messages in `aecor.runtime.akkapersistence`.
   */
-private[aecornext] trait Message
+private[aecor] trait Message

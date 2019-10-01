@@ -1,11 +1,11 @@
-package aecornext.example.transaction
+package aecor.example.transaction
 import java.util.UUID
 
-import aecornext.example.common.Timestamp
-import aecornext.example.transaction.transaction.Transactions
-import aecornext.runtime.Eventsourced
-import aecornext.runtime.akkapersistence.AkkaPersistenceRuntime
-import aecornext.util.Clock
+import aecor.example.common.Timestamp
+import aecor.example.transaction.transaction.Transactions
+import aecor.runtime.Eventsourced
+import aecor.runtime.akkapersistence.AkkaPersistenceRuntime
+import aecor.util.Clock
 import cats.implicits._
 import cats.effect.Effect
 import scodec.codecs.implicits._

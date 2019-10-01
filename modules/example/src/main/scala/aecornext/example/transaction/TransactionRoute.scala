@@ -1,10 +1,10 @@
-package aecornext.example.transaction
+package aecor.example.transaction
 
 import java.util.UUID
 
-import aecornext.example.account
-import aecornext.example.account.AccountId
-import aecornext.example.common.Amount
+import aecor.example.account
+import aecor.example.account.AccountId
+import aecor.example.common.Amount
 import cats.effect.{Effect, Sync}
 import cats.implicits._
 import org.http4s.HttpService

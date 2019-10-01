@@ -1,10 +1,10 @@
-package aecornext.testkit
+package aecor.testkit
 
-import aecornext.data.{ EventsourcedBehavior, _ }
-import aecornext.encoding.WireProtocol
-import aecornext.encoding.WireProtocol.{ Encoded, Invocation }
-import aecornext.runtime.Eventsourced._
-import aecornext.runtime.{ EventJournal, Eventsourced }
+import aecor.data.{ EventsourcedBehavior, _ }
+import aecor.encoding.WireProtocol
+import aecor.encoding.WireProtocol.{ Encoded, Invocation }
+import aecor.runtime.Eventsourced._
+import aecor.runtime.{ EventJournal, Eventsourced }
 import cats.data.{ EitherT, StateT }
 import cats.effect.{ IO, Sync }
 import cats.implicits._
@@ -13,7 +13,7 @@ import cats.tagless.FunctorK
 import cats.tagless.syntax.functorK._
 import cats.{ Monad, MonadError, ~> }
 import monocle.Lens
-import aecornext.encoding.syntax._
+import aecor.encoding.syntax._
 
 import scala.collection.immutable._
 

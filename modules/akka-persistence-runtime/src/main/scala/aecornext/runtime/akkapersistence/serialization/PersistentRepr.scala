@@ -1,4 +1,4 @@
-package aecornext.runtime.akkapersistence.serialization
+package aecor.runtime.akkapersistence.serialization
 
 import akka.actor.ExtendedActorSystem
 import akka.serialization.{ BaseSerializer, SerializerWithStringManifest }

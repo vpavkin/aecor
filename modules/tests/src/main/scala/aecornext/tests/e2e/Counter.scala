@@ -1,12 +1,12 @@
-package aecornext.tests.e2e
+package aecor.tests.e2e
 
-import aecornext.MonadAction
-import aecornext.data._
-import aecornext.data.Folded.syntax._
-import aecornext.macros.boopickleWireProtocol
-import aecornext.runtime.akkapersistence.serialization.{ PersistentDecoder, PersistentEncoder }
-import aecornext.tests.PersistentEncoderCirce
-import aecornext.tests.e2e.CounterEvent.{ CounterDecremented, CounterIncremented }
+import aecor.MonadAction
+import aecor.data._
+import aecor.data.Folded.syntax._
+import aecor.macros.boopickleWireProtocol
+import aecor.runtime.akkapersistence.serialization.{ PersistentDecoder, PersistentEncoder }
+import aecor.tests.PersistentEncoderCirce
+import aecor.tests.e2e.CounterEvent.{ CounterDecremented, CounterIncremented }
 import io.circe.generic.auto._
 import cats.implicits._
 import boopickle.Default._

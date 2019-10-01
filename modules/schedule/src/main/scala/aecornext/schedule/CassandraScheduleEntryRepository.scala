@@ -1,11 +1,11 @@
-package aecornext.schedule
+package aecor.schedule
 
 import java.time._
 import java.time.format.DateTimeFormatter
 
-import aecornext.akka.persistence.cassandra.Session
-import aecornext.schedule.CassandraScheduleEntryRepository.{Queries, TimeBucket}
-import aecornext.schedule.ScheduleEntryRepository.ScheduleEntry
+import aecor.akka.persistence.cassandra.Session
+import aecor.schedule.CassandraScheduleEntryRepository.{Queries, TimeBucket}
+import aecor.schedule.ScheduleEntryRepository.ScheduleEntry
 import akka.NotUsed
 import akka.persistence.cassandra.session.scaladsl.CassandraSession
 import akka.stream.Materializer
@@ -14,7 +14,7 @@ import cats.effect.Effect
 import com.datastax.driver.core.Row
 import com.datastax.driver.extras.codecs.jdk8.InstantCodec
 import org.slf4j.LoggerFactory
-import aecornext.util.effect._
+import aecor.util.effect._
 import cats.Monad
 import cats.data.Kleisli
 import cats.implicits._

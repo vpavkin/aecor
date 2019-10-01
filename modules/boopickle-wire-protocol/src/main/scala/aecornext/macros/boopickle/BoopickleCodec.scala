@@ -1,4 +1,4 @@
-package aecornext.macros.boopickle
+package aecor.macros.boopickle
 import boopickle.Pickler
 import scodec.bits.BitVector
 import scodec.{ Attempt, Codec, DecodeResult, Decoder, Encoder, Err, SizeBound }

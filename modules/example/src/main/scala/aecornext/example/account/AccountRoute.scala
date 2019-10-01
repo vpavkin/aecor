@@ -1,4 +1,4 @@
-package aecornext.example.account
+package aecor.example.account
 
 import cats.implicits._
 import org.http4s.circe._

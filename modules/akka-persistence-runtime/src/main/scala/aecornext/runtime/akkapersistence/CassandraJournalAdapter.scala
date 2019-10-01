@@ -1,4 +1,4 @@
-package aecornext.runtime.akkapersistence
+package aecor.runtime.akkapersistence
 
 import java.util.UUID
 

@@ -1,11 +1,11 @@
-package aecornext.runtime.akkapersistence.readside
+package aecor.runtime.akkapersistence.readside
 
 import java.util.UUID
 
-import aecornext.data.TagConsumer
-import aecornext.runtime.KeyValueStore
-import aecornext.util.effect._
-import aecornext.akka.persistence.cassandra.Session.Init
+import aecor.data.TagConsumer
+import aecor.runtime.KeyValueStore
+import aecor.util.effect._
+import aecor.akka.persistence.cassandra.Session.Init
 import akka.persistence.cassandra.session.scaladsl.CassandraSession
 import cats.Functor
 import cats.data.Kleisli

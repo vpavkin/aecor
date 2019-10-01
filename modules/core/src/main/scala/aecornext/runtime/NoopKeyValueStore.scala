@@ -1,4 +1,4 @@
-package aecornext.runtime
+package aecor.runtime
 
 import cats.Applicative
 import cats.implicits._

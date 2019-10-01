@@ -1,19 +1,19 @@
-package aecornext.schedule
+package aecor.schedule
 
 import java.time.{ Instant, LocalDateTime, ZoneOffset, ZonedDateTime }
 
-import aecornext.MonadActionLift
-import aecornext.data.{ ActionT, EventsourcedBehavior, Folded }
-import aecornext.data.Folded.syntax._
-import aecornext.runtime.akkapersistence.serialization.PersistentDecoder.DecodingResult
-import aecornext.runtime.akkapersistence.serialization.{
+import aecor.MonadActionLift
+import aecor.data.{ ActionT, EventsourcedBehavior, Folded }
+import aecor.data.Folded.syntax._
+import aecor.runtime.akkapersistence.serialization.PersistentDecoder.DecodingResult
+import aecor.runtime.akkapersistence.serialization.{
   PersistentDecoder,
   PersistentEncoder,
   PersistentRepr
 }
-import aecornext.schedule.ScheduleEvent.{ ScheduleEntryAdded, ScheduleEntryFired }
-import aecornext.schedule.ScheduleState._
-import aecornext.schedule.serialization.protobuf.msg
+import aecor.schedule.ScheduleEvent.{ ScheduleEntryAdded, ScheduleEntryFired }
+import aecor.schedule.ScheduleState._
+import aecor.schedule.serialization.protobuf.msg
 import cats.implicits._
 import cats.kernel.Eq
 import cats.{ Functor, Monad }
@@ -153,7 +153,7 @@ trait ScheduleEventInstances {
     }
 }
 
-private[aecornext] case class ScheduleState(unfired: Map[String, ScheduleEntry], fired: Set[String]) {
+private[aecor] case class ScheduleState(unfired: Map[String, ScheduleEntry], fired: Set[String]) {
   def addEntry(entryId: String, correlationId: String, dueDate: LocalDateTime): ScheduleState =
     copy(unfired = unfired + (entryId -> ScheduleEntry(entryId, correlationId, dueDate)))
 
@@ -171,7 +171,7 @@ private[aecornext] case class ScheduleState(unfired: Map[String, ScheduleEntry],
   }
 }
 
-private[aecornext] object ScheduleState {
+private[aecor] object ScheduleState {
 
   def initial: ScheduleState = ScheduleState(Map.empty, Set.empty)
 

@@ -1,4 +1,4 @@
-package aecornext.macros
+package aecor.macros
 
 import scala.annotation.compileTimeOnly
 import scala.collection.immutable.Seq
@@ -45,29 +45,29 @@ object BoopickleWireProtocolMacro {
       case tpe: Type => tpe
     }
 
-    val unifiedInvocation = t"({type X[A] = aecornext.encoding.WireProtocol.Invocation[$unifiedBase, A]})#X"
+    val unifiedInvocation = t"({type X[A] = aecor.encoding.WireProtocol.Invocation[$unifiedBase, A]})#X"
 
     val instanceName = Term.Name(s"aecorWireProtocol${typeName.value}")
     val companionStats: Seq[Stat] = Seq(
       q"""
-        implicit def $instanceName[..$abstractParams]: aecornext.encoding.WireProtocol[$unifiedBase]  =
-         new aecornext.encoding.WireProtocol[$unifiedBase] {
+        implicit def $instanceName[..$abstractParams]: aecor.encoding.WireProtocol[$unifiedBase]  =
+         new aecor.encoding.WireProtocol[$unifiedBase] {
 
-            final val encoder = new ${Ctor.Name(typeName.value)}[..$abstractTypes, aecornext.encoding.WireProtocol.Encoded] {
+            final val encoder = new ${Ctor.Name(typeName.value)}[..$abstractTypes, aecor.encoding.WireProtocol.Encoded] {
               ..${
         traitStats.map {
           case q"def $name[..$tps](..$params): ${someF: Type.Name}[$out]" if someF.value == theF.value =>
             q"""
-                        final def $name[..$tps](..$params): aecornext.encoding.WireProtocol.Encoded[$out] = (
+                        final def $name[..$tps](..$params): aecor.encoding.WireProtocol.Encoded[$out] = (
                           _root_.scodec.bits.BitVector(_root_.boopickle.Default.Pickle.intoBytes((${Lit.String(name.value)}, ..${params.map(_.name.value).map(Term.Name(_))}))),
-                          _root_.aecornext.macros.boopickle.BoopickleCodec.decoder[$out]
+                          _root_.aecor.macros.boopickle.BoopickleCodec.decoder[$out]
                         )
                       """
           case q"def $name: ${someF: Type.Name}[$out]" if someF.value == theF.value =>
             q"""
-                        final val ${Pat.Var.Term(name)}: aecornext.encoding.WireProtocol.Encoded[$out] = (
+                        final val ${Pat.Var.Term(name)}: aecor.encoding.WireProtocol.Encoded[$out] = (
                           _root_.scodec.bits.BitVector(_root_.boopickle.Default.Pickle.intoBytes(${Lit.String(name.value)})),
-                          _root_.aecornext.macros.boopickle.BoopickleCodec.decoder[$out]
+                          _root_.aecor.macros.boopickle.BoopickleCodec.decoder[$out]
                         )
                       """
           case other =>
@@ -76,11 +76,11 @@ object BoopickleWireProtocolMacro {
       }
             }
 
-            final val decoder: _root_.scodec.Decoder[aecornext.data.PairE[$unifiedInvocation, _root_.scodec.Encoder]] =
-              new _root_.scodec.Decoder[aecornext.data.PairE[$unifiedInvocation, _root_.scodec.Encoder]] {
+            final val decoder: _root_.scodec.Decoder[aecor.data.PairE[$unifiedInvocation, _root_.scodec.Encoder]] =
+              new _root_.scodec.Decoder[aecor.data.PairE[$unifiedInvocation, _root_.scodec.Encoder]] {
 
                 final override def decode(bytes: _root_.scodec.bits.BitVector) = {
-                  _root_.aecornext.macros.boopickle.BoopickleCodec.attemptFromTry(scala.util.Try {
+                  _root_.aecor.macros.boopickle.BoopickleCodec.attemptFromTry(scala.util.Try {
                   val state = _root_.boopickle.UnpickleState(bytes.toByteBuffer.order(_root_.java.nio.ByteOrder.LITTLE_ENDIAN))
                   state.unpickle[String] match {
                      ..case ${
@@ -91,7 +91,7 @@ object BoopickleWireProtocolMacro {
             val nameLit = Lit.String(name.value)
             p"""case $nameLit =>
                   val args = state.unpickle[$tupleTpeBase[..${params.map { case param"$n:${Some(tpe)}" => toType(tpe) }}]]
-                  val invocation = new aecornext.encoding.WireProtocol.Invocation[$unifiedBase, $out] {
+                  val invocation = new aecor.encoding.WireProtocol.Invocation[$unifiedBase, $out] {
                     final override def run[F[_]](mf: $unifiedBase[F]): F[$out] =
                       mf.$name(..$arglist)
                     final override def toString: String = {
@@ -99,16 +99,16 @@ object BoopickleWireProtocolMacro {
                       s"$$name$$args"
                     }
                   }
-                  aecornext.data.PairE(invocation, _root_.aecornext.macros.boopickle.BoopickleCodec.encoder[$out])
+                  aecor.data.PairE(invocation, _root_.aecor.macros.boopickle.BoopickleCodec.encoder[$out])
              """
           case q"def $name: ${someF: Type.Name}[$out]" if someF.value == theF.value =>
             val nameLit =  Lit.String(name.value)
             p"""case $nameLit =>
-                  val invocation = new aecornext.encoding.WireProtocol.Invocation[$unifiedBase, $out] {
+                  val invocation = new aecor.encoding.WireProtocol.Invocation[$unifiedBase, $out] {
                     final override def run[F[_]](mf: $unifiedBase[F]): F[$out] = mf.$name
                     final override def toString: String = $nameLit
                   }
-                  aecornext.data.PairE(invocation, _root_.aecornext.macros.boopickle.BoopickleCodec.encoder[$out])
+                  aecor.data.PairE(invocation, _root_.aecor.macros.boopickle.BoopickleCodec.encoder[$out])
              """
           case other =>
             abort(s"Illegal method [$other]")
